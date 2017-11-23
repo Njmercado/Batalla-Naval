@@ -29,8 +29,8 @@ public class LognInController {
     }
     
     private void openRoom() {
-
+        
         new View.LognIn().setVisible(false);
-        new View.Room().setVisible(true);
+        new View.Room(this.users).setVisible(true);
     }
 }

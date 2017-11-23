@@ -63,7 +63,7 @@ public class Bomb {
         this.price = price;
     }
     
-    public Bomb[][] getBombsMatrix() {
+    public Bomb[][] getBombsMatrix(int x, int y) {
 
         int n = 0;
         bombsMatrix = new Bomb[3][(int) bombs.size() / 3];

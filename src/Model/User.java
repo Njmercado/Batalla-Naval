@@ -31,7 +31,20 @@ public class User {
         this.con = con;
     }
 
-    public User(String userName, String password, int lavel, float money, int points, Blob image) {
+    /**
+     * This method is use for register a new user in the dataBase
+     */
+    public User(String userName, String password, Blob image) {
+
+        this.userName = userName;
+        this.password = password;
+        this.image = image;
+    }
+    
+    /**
+     * This method is use for create a user and input it in the arrayList.
+     */
+    private User(String userName, String password, int lavel, float money, int points, Blob image) {
 
         this.userName = userName;
         this.password = password;
@@ -121,5 +134,20 @@ public class User {
         }
 
         return a;
+    }
+    
+    public User[][] getUserMatrix(int x, int y){
+        
+        int length = this.users.size() / 5;
+        User[][] userMatrix = new User[5][length];
+        
+        for (int i = 0; i < (int) length; i++) {
+            
+            for (int j = 0; j < 5; j++) {
+                userMatrix[i][j] = this.users.get(j+ (int)length);
+            }
+        }
+        
+        return userMatrix;
     }
 }
